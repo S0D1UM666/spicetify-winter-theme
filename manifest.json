@@ -1,0 +1,18 @@
+{
+  "name": "Winter & Halloween",
+  "description": "Snowy winter and Christmas theme with a decorated tree, falling snow, a storybook cabin banner, 40 daily greetings and an optional Halloween mode. Switch between Russian and English from the gear button.",
+  "preview": "preview.png",
+  "readme": "README.md",
+  "usercss": "user.css",
+  "schemes": "color.ini",
+  "include": [
+    "https://raw.githubusercontent.com/S0D1UM666/spicetify-winter-theme/main/theme.js"
+  ],
+  "authors": [
+    {
+      "name": "S0D1UM666",
+      "url": "https://github.com/S0D1UM666"
+    }
+  ],
+  "tags": ["winter", "christmas", "holiday", "dark", "animated"]
+}
