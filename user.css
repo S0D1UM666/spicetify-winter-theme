@@ -1,0 +1,2116 @@
+/* ============================================================
+   HALLOWEEN for Spotify
+   Deep violet night, pumpkin orange, candlelight cream.
+   ============================================================ */
+
+html:is(.hw-theme-on, .xw-theme-on) {
+  background-color: #050308 !important;
+  --hw-ink: #050308;
+  --hw-night: #0b0710;
+  --hw-night-2: #130b1c;
+  --hw-night-3: #1d0f2a;
+  --hw-purple: #2c1440;
+  --hw-purple-2: #4b2366;
+  --hw-orange: #ff9a2e;
+  --hw-orange-deep: #e8740e;
+  --hw-orange-soft: #ffb45f;
+  --hw-cream: #f6ead3;
+  --hw-cream-dim: #bfa98d;
+  --hw-moon: #ffe9b8;
+  --hw-moss: #7d9b58;
+
+  --spice-text: #f6ead3;
+  --spice-subtext: #bfa98d;
+  --spice-main: #0b0710;
+  --spice-main-elevated: #171021;
+  --spice-highlight: #241330;
+  --spice-highlight-elevated: #2e1a3c;
+  --spice-sidebar: #07040b;
+  --spice-player: #0c0712;
+  --spice-card: #1a1026;
+  --spice-shadow: #000000;
+  --spice-selected-row: #f3b45f;
+  --spice-button: #ff9a2e;
+  --spice-button-active: #ff9a2e;
+  --spice-button-disabled: #4a3852;
+  --spice-tab-active: #341a45;
+  --spice-notification: #7a2aa8;
+  --spice-notification-error: #b3261e;
+  --spice-misc: #8c6e57;
+
+  --spice-rgb-text: 246, 234, 211;
+  --spice-rgb-subtext: 191, 169, 141;
+  --spice-rgb-main: 11, 7, 16;
+  --spice-rgb-main-elevated: 23, 16, 33;
+  --spice-rgb-highlight: 36, 19, 48;
+  --spice-rgb-highlight-elevated: 46, 26, 60;
+  --spice-rgb-sidebar: 7, 4, 11;
+  --spice-rgb-player: 12, 7, 18;
+  --spice-rgb-card: 26, 16, 38;
+  --spice-rgb-shadow: 0, 0, 0;
+  --spice-rgb-selected-row: 243, 180, 95;
+  --spice-rgb-button: 255, 154, 46;
+  --spice-rgb-button-active: 255, 154, 46;
+  --spice-rgb-button-disabled: 74, 56, 82;
+  --spice-rgb-tab-active: 52, 26, 69;
+  --spice-rgb-notification: 122, 42, 168;
+  --spice-rgb-notification-error: 179, 38, 30;
+  --spice-rgb-misc: 140, 110, 87;
+
+/* ------------------------------------------------------------
+   Base canvas
+   ------------------------------------------------------------ */
+
+body,
+#main,
+.Root__top-container {
+  background-color: var(--hw-ink) !important;
+}
+
+body {
+  color: var(--hw-cream);
+}
+
+.Root__top-container {
+  background:
+    radial-gradient(1100px 520px at 72% -12%, rgba(255, 122, 18, 0.08), transparent 62%),
+    radial-gradient(900px 620px at 6% 8%, rgba(105, 36, 150, 0.14), transparent 66%),
+    var(--hw-ink) !important;
+}
+
+::selection {
+  background: rgba(255, 154, 46, 0.38);
+  color: #fff7e7;
+}
+
+/* Thin, warm scrollbars */
+.os-scrollbar-handle {
+  background-color: rgba(243, 180, 95, 0.32) !important;
+}
+.os-scrollbar-handle:hover {
+  background-color: rgba(255, 154, 46, 0.68) !important;
+}
+.os-scrollbar-track {
+  background-color: transparent !important;
+}
+
+/* ------------------------------------------------------------
+   Top bar
+   ------------------------------------------------------------ */
+
+#global-nav-bar,
+.Root__globalNav {
+  background:
+    linear-gradient(180deg, rgba(17, 10, 25, 0.98) 0%, rgba(7, 4, 11, 0.98) 100%) !important;
+  border-bottom: 1px solid rgba(255, 154, 46, 0.14);
+  box-shadow:
+    0 1px 0 rgba(255, 154, 46, 0.06),
+    0 10px 32px rgba(0, 0, 0, 0.5);
+}
+
+.main-globalNav-navLink {
+  color: var(--hw-cream-dim) !important;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.main-globalNav-navLink:hover {
+  color: var(--hw-orange) !important;
+  background-color: rgba(255, 154, 46, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.main-globalNav-navLinkActive,
+.main-globalNav-navLinkActive:hover {
+  color: var(--hw-orange) !important;
+}
+
+.main-globalNav-contentRight button {
+  color: var(--hw-cream-dim);
+}
+.main-globalNav-contentRight button:hover {
+  color: var(--hw-orange) !important;
+}
+
+/* Search field */
+input[data-encore-id="formInput"] {
+  background-color: rgba(26, 16, 38, 0.94) !important;
+  color: var(--hw-cream) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 154, 46, 0.14),
+    inset 0 8px 22px rgba(0, 0, 0, 0.24) !important;
+  transition: box-shadow 180ms ease, background-color 180ms ease;
+}
+
+input[data-encore-id="formInput"]:focus {
+  background-color: rgba(31, 19, 45, 0.98) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 154, 46, 0.62),
+    0 0 24px rgba(255, 122, 18, 0.16) !important;
+}
+
+input[data-encore-id="formInput"]::placeholder {
+  color: rgba(191, 169, 141, 0.72) !important;
+}
+
+/* The bulb extension owns this button; only add a warm skin. */
+#spotify-bulb-button {
+  color: var(--hw-cream-dim) !important;
+}
+#spotify-bulb-button:hover {
+  color: var(--hw-orange) !important;
+  background-color: rgba(255, 154, 46, 0.09) !important;
+}
+#spotify-bulb-button.spotify-bulb-on {
+  color: var(--hw-orange) !important;
+  filter: drop-shadow(0 0 7px rgba(255, 138, 30, 0.65));
+}
+
+/* ------------------------------------------------------------
+   Left library rail
+   ------------------------------------------------------------ */
+
+#Desktop_LeftSidebar_Id {
+  background:
+    linear-gradient(180deg, rgba(23, 12, 34, 0.97) 0%, rgba(8, 4, 13, 0.99) 62%, #06030a 100%) !important;
+  border: 1px solid rgba(255, 154, 46, 0.1);
+  border-radius: 14px;
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 38px rgba(105, 36, 150, 0.07);
+}
+
+#Desktop_LeftSidebar_Id a,
+#Desktop_LeftSidebar_Id button {
+  color: var(--hw-cream-dim);
+}
+
+#Desktop_LeftSidebar_Id a:hover,
+#Desktop_LeftSidebar_Id button:hover {
+  color: var(--hw-orange) !important;
+}
+
+#Desktop_LeftSidebar_Id [aria-current="page"],
+#Desktop_LeftSidebar_Id .main-yourLibraryX-listRow--active {
+  color: var(--hw-orange) !important;
+}
+
+/* ------------------------------------------------------------
+   Main view
+   ------------------------------------------------------------ */
+
+#main-view {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(860px 420px at 82% -8%, rgba(255, 122, 18, 0.1), transparent 62%),
+    radial-gradient(780px 520px at 4% 6%, rgba(105, 36, 150, 0.17), transparent 66%),
+    radial-gradient(760px 380px at 52% 116%, rgba(105, 36, 150, 0.13), transparent 72%),
+    linear-gradient(180deg, #0e0816 0%, #0b0710 46%, #07040c 100%) !important;
+}
+
+#main-view::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.5);
+}
+
+.main-view-container,
+.main-view-container__scroll-node,
+.main-view-container__scroll-node-child,
+.main-view-container main {
+  background: transparent !important;
+}
+
+/* The original Home hero is only a colour wash behind the top row. */
+body.hw-home #main-view main > div > div:first-child {
+  background:
+    radial-gradient(circle at 84% 28%, rgba(255, 233, 184, 0.22) 0 34px, transparent 120px),
+    radial-gradient(700px 280px at 76% 6%, rgba(255, 138, 30, 0.16), transparent 66%),
+    linear-gradient(180deg, #1a0d2b 0%, #140c20 42%, #0b0710 100%) !important;
+  opacity: 0.92;
+}
+
+/* Playlist and album headers: replace the flat grey wash with violet dusk. */
+body.hw-route-playlist [data-testid="entity-header"] > div:first-child,
+body.hw-route-album [data-testid="entity-header"] > div:first-child {
+  background:
+    radial-gradient(720px 300px at 78% 0%, rgba(255, 138, 30, 0.15), transparent 68%),
+    radial-gradient(620px 280px at 12% 10%, rgba(105, 36, 150, 0.28), transparent 72%),
+    linear-gradient(180deg, #241031 0%, #170d22 46%, #0b0710 100%) !important;
+  opacity: 1;
+}
+
+/* Section headings get a storybook feel. */
+h1,
+h2,
+.main-shelf-title {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.015em;
+}
+
+h2 {
+  color: var(--hw-cream) !important;
+  text-shadow: 0 0 24px rgba(255, 138, 30, 0.1);
+}
+
+/* ------------------------------------------------------------
+   Home filter chips
+   ------------------------------------------------------------ */
+
+.e-10860-legacy-chip__inner {
+  background-color: rgba(246, 234, 211, 0.06);
+  color: var(--hw-cream-dim);
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.e-10860-legacy-chip:hover .e-10860-legacy-chip__inner {
+  background-color: rgba(255, 154, 46, 0.13);
+  color: var(--hw-cream);
+}
+
+.e-10860-legacy-chip__inner--selected,
+.e-10860-legacy-chip__inner.encore-inverted-light-set {
+  background: linear-gradient(135deg, #ffb45f 0%, #ef7a12 100%) !important;
+  color: #1a0a03 !important;
+  box-shadow: 0 0 20px rgba(255, 138, 30, 0.26);
+}
+
+/* Quick-pick tiles */
+[shortcut-background] {
+  background-color: rgba(17, 9, 26, 0.72) !important;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+[shortcut-background]:hover {
+  background-color: rgba(255, 138, 30, 0.11) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 154, 46, 0.24);
+}
+
+.view-homeShortcutsGrid-shortcut {
+  border-radius: 10px;
+  transition: transform 180ms ease;
+}
+.view-homeShortcutsGrid-shortcut:hover {
+  transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------------
+   Cards, rows, shelves
+   ------------------------------------------------------------ */
+
+[data-encore-id="card"] {
+  border-radius: 12px;
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+[data-encore-id="card"]:hover,
+[data-encore-id="card"]:focus-within {
+  background-color: rgba(255, 138, 30, 0.075) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 154, 46, 0.24),
+    0 18px 38px rgba(0, 0, 0, 0.46);
+  transform: translateY(-2px);
+}
+
+[data-encore-id="card"] a {
+  color: var(--hw-cream) !important;
+}
+
+.main-trackList-trackListRow {
+  border-radius: 8px;
+  transition: background-color 140ms ease;
+}
+
+.main-trackList-trackListRow:hover {
+  background-color: rgba(255, 154, 46, 0.07) !important;
+}
+
+.main-trackList-trackListRow[aria-selected="true"],
+.main-trackList-trackListRow--selected {
+  background-color: rgba(255, 154, 46, 0.12) !important;
+}
+
+.main-trackList-rowTitle,
+.main-trackList-trackListRow a {
+  color: var(--hw-cream);
+}
+
+.main-trackList-rowSubTitle {
+  color: var(--hw-cream-dim);
+}
+
+/* Encore's bright accent is the play button. */
+.encore-bright-accent-set {
+  --background-base: var(--hw-orange);
+  --background-highlight: #ffb45f;
+  --background-press: #c95c08;
+  --background-elevated-base: #ffb45f;
+  --background-elevated-highlight: #ffc47a;
+  --background-elevated-press: #c95c08;
+  --background-tinted-base: var(--hw-orange);
+  --background-tinted-highlight: #ffb45f;
+  --background-tinted-press: #c95c08;
+  --text-base: #1b0b02;
+  --text-subdued: #1b0b02;
+  --text-bright-accent: #1b0b02;
+  --text-negative: #1b0b02;
+  --text-warning: #1b0b02;
+  --text-positive: #1b0b02;
+  --text-announcement: #1b0b02;
+  --essential-base: #1b0b02;
+  --essential-subdued: #1b0b02;
+  --essential-bright-accent: #1b0b02;
+  --decorative-base: #1b0b02;
+  --decorative-subdued: #1b0b02;
+}
+
+.e-10860-button-primary__inner.encore-bright-accent-set,
+.encore-bright-accent-set {
+  background-color: var(--hw-orange) !important;
+  background-image: linear-gradient(180deg, #ffb45f 0%, #ef7a12 100%) !important;
+  color: #1b0b02 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 239, 205, 0.35),
+    0 6px 18px rgba(255, 122, 18, 0.2);
+}
+
+button:hover > .encore-bright-accent-set {
+  background-image: linear-gradient(180deg, #ffc47a 0%, #ff8d1d 100%) !important;
+}
+
+/* ------------------------------------------------------------
+   Play bar
+   ------------------------------------------------------------ */
+
+.XvuTwlgQRqJ5NnVLN9ZH {
+  background: transparent !important;
+}
+
+aside.main-nowPlayingBar-container {
+  position: relative;
+  background:
+    radial-gradient(620px 90px at 50% 0%, rgba(255, 138, 30, 0.09), transparent 72%),
+    linear-gradient(180deg, #150c1f 0%, #09050f 100%) !important;
+  border: 1px solid rgba(255, 154, 46, 0.15);
+  border-radius: 14px;
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.58),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+aside.main-nowPlayingBar-container::before {
+  content: "";
+  position: absolute;
+  inset: 0 14% auto 14%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 154, 46, 0.55), transparent);
+  pointer-events: none;
+}
+
+.main-trackInfo-name {
+  color: var(--hw-cream) !important;
+}
+
+.main-trackInfo-artists {
+  color: var(--hw-cream-dim) !important;
+}
+
+aside.main-nowPlayingBar-container button:not([data-testid="control-button-playpause"]):hover {
+  color: var(--hw-orange) !important;
+}
+
+aside.main-nowPlayingBar-container button[data-testid="control-button-playpause"] .encore-inverted-light-set {
+  background-color: var(--hw-cream) !important;
+  background-image: linear-gradient(180deg, #fff4d6 0%, #f0c98c 100%) !important;
+  color: #160a05 !important;
+  box-shadow: 0 0 22px rgba(255, 224, 168, 0.22);
+}
+
+aside.main-nowPlayingBar-container button[data-testid="control-button-playpause"]:hover .encore-inverted-light-set {
+  background-image: linear-gradient(180deg, #fffaf0 0%, #ffdca0 100%) !important;
+}
+
+.x-progressBar-progressBarBg {
+  background-color: rgba(246, 234, 211, 0.16) !important;
+}
+
+.x-progressBar-progressFillColor {
+  background-color: var(--hw-orange) !important;
+  box-shadow: 0 0 10px rgba(255, 138, 30, 0.55);
+}
+
+/* ------------------------------------------------------------
+   Right sidebar (now playing / lyrics)
+   ------------------------------------------------------------ */
+
+.s8fIIxwITjOk1aFOxhPv {
+  background: transparent !important;
+}
+
+.s8fIIxwITjOk1aFOxhPv .xyTYq7imng71iO6y2eGQ,
+.s8fIIxwITjOk1aFOxhPv .XzZrOrwzdWh13vjQSwtL {
+  background:
+    radial-gradient(480px 280px at 84% 0%, rgba(255, 138, 30, 0.08), transparent 62%),
+    linear-gradient(180deg, #150d20 0%, #090510 100%) !important;
+  border-left: 1px solid rgba(255, 154, 46, 0.1);
+}
+
+/* SpicyLyrics now-playing card: dark glass, warm ember accents. */
+#SpicyLyricsNPVCard {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(320px 180px at 88% -10%, rgba(255, 138, 30, 0.13), transparent 70%),
+    linear-gradient(160deg, rgba(43, 23, 58, 0.92) 0%, rgba(20, 11, 30, 0.94) 58%, rgba(10, 5, 16, 0.96) 100%) !important;
+  border: 1px solid rgba(255, 154, 46, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 240, 214, 0.06),
+    inset 0 0 60px rgba(255, 122, 18, 0.04) !important;
+  backdrop-filter: blur(10px);
+}
+
+#SpicyLyricsNPVCard::after {
+  content: "";
+  position: absolute;
+  inset: 0 16% auto 16%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 154, 46, 0.5), transparent);
+  pointer-events: none;
+}
+
+#SpicyLyricsNPVCard .CardHeader {
+  border-bottom: 1px solid rgba(255, 154, 46, 0.1);
+  background: linear-gradient(180deg, rgba(255, 154, 46, 0.06), transparent);
+}
+
+#SpicyLyricsNPVCard .CardTitle {
+  color: var(--hw-cream) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 18px rgba(255, 138, 30, 0.2);
+}
+
+#SpicyLyricsNPVCard .CardTitle::before {
+  content: "✦";
+  margin-right: 8px;
+  color: var(--hw-orange);
+  font-size: 11px;
+  text-shadow: 0 0 12px rgba(255, 138, 30, 0.8);
+}
+
+#SpicyLyricsNPVCard .CardControl {
+  color: var(--hw-cream-dim) !important;
+  background-color: rgba(255, 154, 46, 0.07) !important;
+  border: 1px solid rgba(255, 154, 46, 0.1);
+  transition: color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+#SpicyLyricsNPVCard .CardControl:hover {
+  color: var(--hw-orange) !important;
+  background-color: rgba(255, 154, 46, 0.17) !important;
+  box-shadow: 0 0 16px rgba(255, 122, 18, 0.22);
+}
+
+#SpicyLyricsNPVCard .CardBody,
+#SpicyLyricsNPVCard #SpicyLyricsPage {
+  background: transparent !important;
+}
+
+/* Spotify's native lyrics preview card shares the same glass treatment. */
+[data-testid="lyrics-npv-section"] {
+  background:
+    radial-gradient(300px 160px at 88% -12%, rgba(255, 138, 30, 0.12), transparent 72%),
+    linear-gradient(160deg, rgba(40, 21, 55, 0.94) 0%, rgba(18, 10, 27, 0.96) 60%, rgba(9, 5, 15, 0.97) 100%) !important;
+  border: 1px solid rgba(255, 154, 46, 0.16) !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 240, 214, 0.05) !important;
+}
+
+[data-testid="lyrics-npv-section"] h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.02em;
+}
+
+/* ------------------------------------------------------------
+   Menus, dialogs and small warm details
+   ------------------------------------------------------------ */
+
+[role="menu"] {
+  background-color: #150d20 !important;
+  border: 1px solid rgba(255, 154, 46, 0.13) !important;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65) !important;
+}
+
+[role="menuitem"]:hover,
+[role="menuitem"]:focus {
+  background-color: rgba(255, 154, 46, 0.12) !important;
+}
+
+hr,
+.main-trackList-trackListHeader {
+  border-color: rgba(255, 154, 46, 0.12) !important;
+}
+
+/* ============================================================
+   HALLOWEEN HOME BANNER (injected by theme.js)
+   ============================================================ */
+
+#hw-banner,
+#xw-banner {
+  position: relative;
+  display: block;
+  height: 204px;
+  margin: 8px 40px 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #08040f;
+  border: 1px solid rgba(255, 154, 46, 0.22);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(255, 255, 255, 0.025) inset,
+    0 0 60px rgba(255, 110, 20, 0.055) inset;
+  animation: hwBannerIn 700ms cubic-bezier(0.2, 0.8, 0.25, 1) both;
+}
+
+#hw-banner::before,
+#xw-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 2, 10, 0.86) 0%,
+    rgba(6, 2, 11, 0.62) 34%,
+    rgba(6, 2, 11, 0.16) 62%,
+    transparent 82%
+  );
+}
+
+#hw-banner::after,
+#xw-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 90px rgba(0, 0, 0, 0.66),
+    inset 0 1px 0 rgba(255, 245, 220, 0.07);
+}
+
+.hw-banner-art,
+.hw-banner-art svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hw-banner-art svg {
+  overflow: hidden;
+}
+
+.hw-banner-copy {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 38px;
+  width: min(48%, 480px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.hw-banner-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--hw-orange-soft);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px rgba(255, 138, 30, 0.24);
+}
+
+.hw-banner-kicker::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--hw-orange));
+  box-shadow: 0 0 8px rgba(255, 138, 30, 0.55);
+}
+
+.hw-banner-title {
+  display: block;
+  margin-left: -3px;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 3.5vw, 44px);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 20px rgba(255, 138, 30, 0.28),
+    0 2px 0 rgba(0, 0, 0, 0.35),
+    0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.hw-banner-sub {
+  color: #d9c4a9;
+  font-size: 13px;
+  letter-spacing: 0.015em;
+  line-height: 1.35;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+}
+
+.hw-banner-sigil {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+  color: rgba(246, 234, 211, 0.55);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hw-banner-sigil span {
+  color: var(--hw-orange);
+  font-size: 13px;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255, 138, 30, 0.75);
+}
+
+/* Spider hanging over the banner */
+.hw-banner-spider {
+  position: absolute;
+  z-index: 4;
+  top: -2px;
+  right: 82px;
+  width: 72px;
+  height: 164px;
+  pointer-events: none;
+  transform-origin: 50% 0;
+  animation: hwSpiderSwing 6.5s ease-in-out infinite alternate;
+}
+
+.hw-banner-spider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ============================================================
+   GLOBAL COBWEBS AND PAGE DECOR (injected by theme.js)
+   ============================================================ */
+
+#hw-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hw-corner-web {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  color: #efe2ff;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.hw-corner-web svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.hw-corner-web.tr {
+  top: -12px;
+  right: -12px;
+  transform: scaleX(-1);
+}
+
+.hw-corner-web.bl {
+  bottom: -18px;
+  left: -18px;
+  width: 160px;
+  height: 160px;
+  transform: scaleY(-1);
+  opacity: 0.1;
+}
+
+body.hw-home .hw-corner-web.tr {
+  display: none;
+}
+
+.hw-hanging-spider {
+  position: absolute;
+  top: -6px;
+  right: 128px;
+  width: 54px;
+  height: 130px;
+  color: #08040c;
+  opacity: 0.85;
+  transform-origin: 50% 0;
+  animation: hwSpiderSwing 7.5s ease-in-out infinite alternate;
+}
+
+.hw-hanging-spider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+body.hw-home .hw-hanging-spider {
+  display: none;
+}
+
+/* Small cobweb in the top-right of the now-playing panel */
+#hw-sidebar-decor {
+  position: absolute;
+  top: -14px;
+  right: -18px;
+  width: 132px;
+  height: 132px;
+  z-index: 3;
+  pointer-events: none;
+  color: #f0e3ff;
+  opacity: 0.11;
+  transform: scaleX(-1);
+}
+
+#hw-sidebar-decor svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+@keyframes hwBannerIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hwSpiderSwing {
+  from {
+    transform: rotate(-2.2deg);
+  }
+  to {
+    transform: rotate(2.2deg);
+  }
+}
+
+@keyframes hwTwinkle {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes hwMoonGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.82;
+  }
+}
+
+@keyframes hwPumpkinGlow {
+  0%,
+  100% {
+    opacity: 0.82;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.96;
+  }
+}
+
+@keyframes hwFogDrift {
+  from {
+    transform: translateX(-36px);
+  }
+  to {
+    transform: translateX(38px);
+  }
+}
+
+@keyframes hwFogDriftBack {
+  from {
+    transform: translateX(24px);
+  }
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes hwBatFly {
+  from {
+    transform: translateX(-140px);
+  }
+  to {
+    transform: translateX(1320px);
+  }
+}
+
+@keyframes hwGhostFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 0.62;
+  }
+}
+
+html:is(.hw-theme-on, .xw-theme-on) {
+.hw-star {
+  animation: hwTwinkle 4.5s ease-in-out infinite;
+}
+
+.hw-moon-glow {
+  animation: hwMoonGlow 7s ease-in-out infinite;
+}
+
+.hw-pumpkin-glow {
+  animation: hwPumpkinGlow 3.4s ease-in-out infinite;
+}
+
+.hw-fog-a {
+  animation: hwFogDrift 24s ease-in-out infinite alternate;
+}
+
+.hw-fog-b {
+  animation: hwFogDriftBack 31s ease-in-out infinite alternate;
+}
+
+.hw-bat {
+  animation: hwBatFly var(--dur, 28s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.hw-ghost {
+  animation: hwGhostFloat 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hw-star,
+  .hw-moon-glow,
+  .hw-pumpkin-glow,
+  .hw-fog-a,
+  .hw-fog-b,
+  .hw-bat,
+  .hw-ghost,
+  .hw-banner-spider,
+  .hw-hanging-spider {
+    animation: none !important;
+  }
+  #hw-banner,
+  #xw-banner {
+    animation: none;
+  }
+  [data-encore-id="card"],
+  .view-homeShortcutsGrid-shortcut,
+  .main-globalNav-navLink {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Narrow windows
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  #hw-banner,
+  #xw-banner {
+    height: 184px;
+    margin: 6px 24px 16px;
+  }
+  .hw-banner-copy {
+    left: 28px;
+    width: min(58%, 420px);
+  }
+  .hw-banner-spider {
+    right: 46px;
+    height: 148px;
+  }
+}
+
+@media (max-width: 760px) {
+  #hw-banner,
+  #xw-banner {
+    height: 158px;
+    margin: 4px 16px 14px;
+  }
+  .hw-banner-copy {
+    left: 22px;
+    width: min(68%, 340px);
+    gap: 5px;
+  }
+  .hw-banner-title {
+    font-size: clamp(30px, 6vw, 42px);
+  }
+  .hw-banner-sub {
+    font-size: 11px;
+  }
+  .hw-banner-sigil,
+  .hw-banner-spider {
+    display: none;
+  }
+}
+}
+
+/* ============================================================
+   STOCK PALETTE WHEN THE PUMPKIN IS OFF
+   The Spicetify colour scheme stays installed, but the visible
+   Halloween palette only lives inside html.hw-theme-on.
+   ============================================================ */
+
+html:not(.hw-theme-on) {
+  --spice-text: #ffffff;
+  --spice-subtext: #b3b3b3;
+  --spice-main: #121212;
+  --spice-main-elevated: #242424;
+  --spice-highlight: #1a1a1a;
+  --spice-highlight-elevated: #2a2a2a;
+  --spice-sidebar: #000000;
+  --spice-player: #181818;
+  --spice-card: #282828;
+  --spice-shadow: #000000;
+  --spice-selected-row: #ffffff;
+  --spice-button: #1db954;
+  --spice-button-active: #1ed760;
+  --spice-button-disabled: #535353;
+  --spice-tab-active: #333333;
+  --spice-notification: #4687d6;
+  --spice-notification-error: #e22134;
+  --spice-misc: #7f7f7f;
+
+  --spice-rgb-text: 255, 255, 255;
+  --spice-rgb-subtext: 179, 179, 179;
+  --spice-rgb-main: 18, 18, 18;
+  --spice-rgb-main-elevated: 36, 36, 36;
+  --spice-rgb-highlight: 26, 26, 26;
+  --spice-rgb-highlight-elevated: 42, 42, 42;
+  --spice-rgb-sidebar: 0, 0, 0;
+  --spice-rgb-player: 24, 24, 24;
+  --spice-rgb-card: 40, 40, 40;
+  --spice-rgb-shadow: 0, 0, 0;
+  --spice-rgb-selected-row: 255, 255, 255;
+  --spice-rgb-button: 29, 185, 84;
+  --spice-rgb-button-active: 30, 215, 96;
+  --spice-rgb-button-disabled: 83, 83, 83;
+  --spice-rgb-tab-active: 51, 51, 51;
+  --spice-rgb-notification: 70, 135, 214;
+  --spice-rgb-notification-error: 226, 33, 52;
+  --spice-rgb-misc: 127, 127, 127;
+}
+
+/* ============================================================
+   PUMPKIN THEME TOGGLE
+   Always visible: a carved jack-o'-lantern night light.
+   ============================================================ */
+
+#hw-pumpkin-toggle {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: #b3b3b3;
+  cursor: pointer;
+  outline: none;
+  pointer-events: auto;
+  -webkit-app-region: no-drag !important;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+#hw-pumpkin-toggle:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+#hw-pumpkin-toggle:active {
+  transform: scale(0.96);
+}
+
+#hw-pumpkin-toggle:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+
+.hw-pumpkin-art {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+.hw-pumpkin-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: transform 220ms ease;
+}
+
+#hw-pumpkin-toggle:hover .hw-pumpkin-art svg {
+  transform: scale(1.04);
+}
+
+html.hw-theme-on #hw-pumpkin-toggle {
+  color: #b3b3b3;
+}
+
+html.hw-theme-on #hw-pumpkin-toggle:hover {
+  color: #fff;
+}
+
+#hw-pumpkin-toggle.hw-pumpkin-firing {
+  color: #ff5a1f;
+}
+
+#hw-pumpkin-toggle.hw-pumpkin-firing .hw-pumpkin-art svg {
+  animation: hwPumpkinJolt 560ms cubic-bezier(0.2, 0.8, 0.3, 1);
+  filter: drop-shadow(0 0 8px rgba(255, 60, 20, 0.85));
+}
+
+@keyframes hwPumpkinJolt {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  28% {
+    transform: scale(1.18) rotate(-3deg);
+  }
+  58% {
+    transform: scale(0.96) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Click effects live above the whole UI. */
+#hw-fx-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.hw-eye-fire {
+  position: absolute;
+  width: 22px;
+  height: 108px;
+  margin-left: -11px;
+  margin-top: -5px;
+  transform-origin: 50% 0;
+  opacity: 0;
+  background: radial-gradient(
+    ellipse at 50% 8%,
+    #ffd27a 0 4%,
+    #ff7a12 14%,
+    #ff2400 38%,
+    #c00000 68%,
+    rgba(80, 0, 0, 0) 92%
+  );
+  filter: blur(0.4px) drop-shadow(0 0 18px rgba(255, 16, 0, 1));
+  clip-path: polygon(
+    38% 0%,
+    50% 4%,
+    62% 0%,
+    74% 14%,
+    64% 34%,
+    86% 58%,
+    60% 82%,
+    52% 100%,
+    44% 82%,
+    14% 60%,
+    36% 36%,
+    26% 14%
+  );
+  will-change: transform, opacity;
+}
+
+.hw-eye-ember {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px;
+  border-radius: 50%;
+  background-color: #ff6a1e;
+  box-shadow: 0 0 10px 3px rgba(255, 40, 0, 0.9);
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+.hw-eye-flash {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  margin: -11px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 110, 30, 1) 0 16%,
+    rgba(255, 28, 0, 0.52) 40%,
+    rgba(140, 0, 0, 0.18) 58%,
+    transparent 72%
+  );
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+.hw-fx-bat {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  will-change: transform, opacity;
+  filter:
+    drop-shadow(0 0 9px rgba(255, 96, 12, 0.88))
+    drop-shadow(0 4px 10px rgba(0, 0, 0, 0.62));
+}
+
+.hw-fx-bat svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: hwBatFlap 190ms ease-in-out infinite alternate;
+}
+
+@keyframes hwBatFlap {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.62);
+  }
+}
+
+.hw-fx-bat path,
+.hw-fx-bat ellipse {
+  fill: #1c0d28;
+  stroke: rgba(255, 144, 40, 0.4);
+  stroke-width: 0.7;
+}
+
+.hw-fx-bat circle {
+  fill: #ffd23e;
+}
+
+html.hw-theme-on #hw-fx-layer .hw-fx-bat path,
+html.hw-theme-on #hw-fx-layer .hw-fx-bat ellipse {
+  fill: #180a24;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hw-pumpkin-toggle .hw-pumpkin-art svg {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   WINTER / CHRISTMAS LAYER
+   Deep midnight blue, snow white, fir green, warm fairy lights.
+   The shared structure above is reused; this block swaps the
+   palette and overrides the few hard-coded autumn accents.
+   ============================================================ */
+
+html.xw-theme-on {
+  --hw-ink: #050b16;
+  --hw-night: #071323;
+  --hw-night-2: #0b1c30;
+  --hw-night-3: #122a44;
+  --hw-purple: #14314d;
+  --hw-purple-2: #1f4d70;
+  --hw-orange: #f4cf7a;
+  --hw-orange-deep: #d9a94a;
+  --hw-orange-soft: #ffe7ad;
+  --hw-cream: #eef6ff;
+  --hw-cream-dim: #a7c0d8;
+  --hw-moon: #eaf4ff;
+  --hw-moss: #3f7d5c;
+
+  --spice-text: #eef6ff;
+  --spice-subtext: #a7c0d8;
+  --spice-main: #050b16;
+  --spice-main-elevated: #0b1c30;
+  --spice-highlight: #122a44;
+  --spice-highlight-elevated: #1a3a58;
+  --spice-sidebar: #040912;
+  --spice-player: #07111f;
+  --spice-card: #0d2035;
+  --spice-shadow: #000000;
+  --spice-selected-row: #cfeaff;
+  --spice-button: #d8444a;
+  --spice-button-active: #ef6b63;
+  --spice-button-disabled: #3a4d63;
+  --spice-tab-active: #173a58;
+  --spice-notification: #4a86c8;
+  --spice-notification-error: #c0392b;
+  --spice-misc: #7f9ab0;
+
+  --spice-rgb-text: 238, 246, 255;
+  --spice-rgb-subtext: 167, 192, 216;
+  --spice-rgb-main: 5, 11, 22;
+  --spice-rgb-main-elevated: 11, 28, 48;
+  --spice-rgb-highlight: 18, 42, 68;
+  --spice-rgb-highlight-elevated: 26, 58, 88;
+  --spice-rgb-sidebar: 4, 9, 18;
+  --spice-rgb-player: 7, 17, 31;
+  --spice-rgb-card: 13, 32, 53;
+  --spice-rgb-shadow: 0, 0, 0;
+  --spice-rgb-selected-row: 207, 234, 255;
+  --spice-rgb-button: 216, 68, 74;
+  --spice-rgb-button-active: 239, 107, 99;
+  --spice-rgb-button-disabled: 58, 77, 99;
+  --spice-rgb-tab-active: 23, 58, 88;
+  --spice-rgb-notification: 74, 134, 200;
+  --spice-rgb-notification-error: 192, 57, 43;
+  --spice-rgb-misc: 127, 154, 176;
+}
+
+html.xw-theme-on ::selection {
+  background: rgba(180, 220, 255, 0.35);
+  color: #ffffff;
+}
+
+html.xw-theme-on .os-scrollbar-handle {
+  background-color: rgba(170, 210, 255, 0.32) !important;
+}
+html.xw-theme-on .os-scrollbar-handle:hover {
+  background-color: rgba(210, 235, 255, 0.68) !important;
+}
+
+/* Top bar */
+html.xw-theme-on #global-nav-bar,
+html.xw-theme-on .Root__globalNav {
+  background: linear-gradient(180deg, rgba(10, 20, 34, 0.98) 0%, rgba(4, 9, 17, 0.98) 100%) !important;
+  border-bottom: 1px solid rgba(190, 225, 255, 0.14);
+  box-shadow:
+    0 1px 0 rgba(190, 225, 255, 0.06),
+    0 10px 32px rgba(0, 0, 0, 0.5);
+}
+
+html.xw-theme-on .main-globalNav-navLink:hover {
+  background-color: rgba(190, 225, 255, 0.1) !important;
+}
+
+html.xw-theme-on input[data-encore-id="formInput"] {
+  background-color: rgba(13, 32, 53, 0.94) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(190, 225, 255, 0.14),
+    inset 0 8px 22px rgba(0, 0, 0, 0.24) !important;
+}
+html.xw-theme-on input[data-encore-id="formInput"]:focus {
+  background-color: rgba(18, 42, 68, 0.98) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(190, 225, 255, 0.62),
+    0 0 24px rgba(120, 180, 255, 0.16) !important;
+}
+html.xw-theme-on input[data-encore-id="formInput"]::placeholder {
+  color: rgba(167, 192, 216, 0.72) !important;
+}
+
+html.xw-theme-on #spotify-bulb-button:hover {
+  background-color: rgba(190, 225, 255, 0.09) !important;
+}
+html.xw-theme-on #spotify-bulb-button.spotify-bulb-on {
+  filter: drop-shadow(0 0 7px rgba(190, 225, 255, 0.65));
+}
+
+/* Left library rail */
+html.xw-theme-on #Desktop_LeftSidebar_Id {
+  background: linear-gradient(180deg, rgba(12, 28, 47, 0.97) 0%, rgba(4, 9, 17, 0.99) 62%, #03070d 100%) !important;
+  border: 1px solid rgba(190, 225, 255, 0.1);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 38px rgba(80, 140, 200, 0.08);
+}
+
+/* Main view */
+html.xw-theme-on #main-view {
+  background:
+    radial-gradient(900px 460px at 82% -8%, rgba(120, 180, 255, 0.12), transparent 62%),
+    radial-gradient(800px 540px at 4% 6%, rgba(70, 150, 160, 0.14), transparent 66%),
+    radial-gradient(760px 380px at 52% 116%, rgba(120, 180, 255, 0.1), transparent 72%),
+    linear-gradient(180deg, #081422 0%, #050b16 46%, #03070e 100%) !important;
+}
+
+html.xw-theme-on body.hw-home #main-view main > div > div:first-child {
+  background:
+    radial-gradient(circle at 84% 28%, rgba(230, 245, 255, 0.22) 0 34px, transparent 120px),
+    radial-gradient(700px 280px at 76% 6%, rgba(120, 180, 255, 0.16), transparent 66%),
+    linear-gradient(180deg, #0c2138 0%, #081422 42%, #050b16 100%) !important;
+  opacity: 0.92;
+}
+
+html.xw-theme-on body.hw-route-playlist [data-testid="entity-header"] > div:first-child,
+html.xw-theme-on body.hw-route-album [data-testid="entity-header"] > div:first-child {
+  background:
+    radial-gradient(720px 300px at 78% 0%, rgba(120, 180, 255, 0.16), transparent 68%),
+    radial-gradient(620px 280px at 12% 10%, rgba(70, 150, 160, 0.24), transparent 72%),
+    linear-gradient(180deg, #0e2a44 0%, #081a2c 46%, #050b16 100%) !important;
+  opacity: 1;
+}
+
+html.xw-theme-on h2 {
+  text-shadow: 0 0 24px rgba(150, 200, 255, 0.12);
+}
+
+/* Chips, tiles, cards, rows */
+html.xw-theme-on .e-10860-legacy-chip:hover .e-10860-legacy-chip__inner {
+  background-color: rgba(190, 225, 255, 0.13);
+}
+html.xw-theme-on .e-10860-legacy-chip__inner--selected,
+html.xw-theme-on .e-10860-legacy-chip__inner.encore-inverted-light-set {
+  background: linear-gradient(135deg, #eaf6ff 0%, #a9c8e8 100%) !important;
+  color: #08131f !important;
+  box-shadow: 0 0 20px rgba(150, 200, 255, 0.26);
+}
+
+html.xw-theme-on [shortcut-background] {
+  background-color: rgba(10, 24, 40, 0.72) !important;
+}
+html.xw-theme-on [shortcut-background]:hover {
+  background-color: rgba(190, 225, 255, 0.11) !important;
+  box-shadow: inset 0 0 0 1px rgba(190, 225, 255, 0.24);
+}
+
+html.xw-theme-on [data-encore-id="card"]:hover,
+html.xw-theme-on [data-encore-id="card"]:focus-within {
+  background-color: rgba(190, 225, 255, 0.075) !important;
+  box-shadow:
+    0 0 0 1px rgba(190, 225, 255, 0.24),
+    0 18px 38px rgba(0, 0, 0, 0.46);
+}
+
+html.xw-theme-on .main-trackList-trackListRow:hover {
+  background-color: rgba(190, 225, 255, 0.07) !important;
+}
+html.xw-theme-on .main-trackList-trackListRow[aria-selected="true"],
+html.xw-theme-on .main-trackList-trackListRow--selected {
+  background-color: rgba(190, 225, 255, 0.12) !important;
+}
+
+/* Play button: Christmas red instead of pumpkin orange */
+html.xw-theme-on .encore-bright-accent-set {
+  --background-base: #d8444a;
+  --background-highlight: #ef6b63;
+  --background-press: #a92430;
+  --background-elevated-base: #ef6b63;
+  --background-elevated-highlight: #f88b7f;
+  --background-elevated-press: #a92430;
+  --background-tinted-base: #d8444a;
+  --background-tinted-highlight: #ef6b63;
+  --background-tinted-press: #a92430;
+  --text-base: #fff6f0;
+  --text-subdued: #fff6f0;
+  --text-bright-accent: #fff6f0;
+  --text-negative: #fff6f0;
+  --text-warning: #fff6f0;
+  --text-positive: #fff6f0;
+  --text-announcement: #fff6f0;
+  --essential-base: #fff6f0;
+  --essential-subdued: #fff6f0;
+  --essential-bright-accent: #fff6f0;
+  --decorative-base: #fff6f0;
+  --decorative-subdued: #fff6f0;
+  background-color: #d8444a !important;
+  background-image: linear-gradient(180deg, #ef6b63 0%, #c62f3a 100%) !important;
+  color: #fff6f0 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 235, 0.35),
+    0 6px 18px rgba(200, 60, 60, 0.2);
+}
+html.xw-theme-on button:hover > .encore-bright-accent-set {
+  background-image: linear-gradient(180deg, #f88b7f 0%, #d83f48 100%) !important;
+}
+
+/* Play bar */
+html.xw-theme-on aside.main-nowPlayingBar-container {
+  background:
+    radial-gradient(620px 90px at 50% 0%, rgba(150, 200, 255, 0.09), transparent 72%),
+    linear-gradient(180deg, #0b1a2c 0%, #040911 100%) !important;
+  border: 1px solid rgba(190, 225, 255, 0.15);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.58),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+html.xw-theme-on aside.main-nowPlayingBar-container::before {
+  background: linear-gradient(90deg, transparent, rgba(190, 225, 255, 0.55), transparent);
+}
+html.xw-theme-on aside.main-nowPlayingBar-container button[data-testid="control-button-playpause"] .encore-inverted-light-set {
+  background-color: #eef6ff !important;
+  background-image: linear-gradient(180deg, #ffffff 0%, #cfe4f5 100%) !important;
+  color: #08131f !important;
+  box-shadow: 0 0 22px rgba(200, 230, 255, 0.22);
+}
+html.xw-theme-on aside.main-nowPlayingBar-container button[data-testid="control-button-playpause"]:hover .encore-inverted-light-set {
+  background-image: linear-gradient(180deg, #ffffff 0%, #e4f2ff 100%) !important;
+}
+html.xw-theme-on .x-progressBar-progressBarBg {
+  background-color: rgba(238, 246, 255, 0.16) !important;
+}
+html.xw-theme-on .x-progressBar-progressFillColor {
+  background-color: #cfeaff !important;
+  box-shadow: 0 0 10px rgba(150, 200, 255, 0.55);
+}
+
+/* Right sidebar and lyrics cards */
+html.xw-theme-on .s8fIIxwITjOk1aFOxhPv .xyTYq7imng71iO6y2eGQ,
+html.xw-theme-on .s8fIIxwITjOk1aFOxhPv .XzZrOrwzdWh13vjQSwtL {
+  background:
+    radial-gradient(480px 280px at 84% 0%, rgba(120, 180, 255, 0.08), transparent 62%),
+    linear-gradient(180deg, #0b1a2c 0%, #040911 100%) !important;
+  border-left: 1px solid rgba(190, 225, 255, 0.1);
+}
+
+html.xw-theme-on #SpicyLyricsNPVCard {
+  background:
+    radial-gradient(320px 180px at 88% -10%, rgba(120, 180, 255, 0.13), transparent 70%),
+    linear-gradient(160deg, rgba(18, 40, 64, 0.92) 0%, rgba(8, 20, 34, 0.94) 58%, rgba(4, 10, 18, 0.96) 100%) !important;
+  border: 1px solid rgba(190, 225, 255, 0.16) !important;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(230, 245, 255, 0.06),
+    inset 0 0 60px rgba(120, 180, 255, 0.04) !important;
+}
+html.xw-theme-on #SpicyLyricsNPVCard::after {
+  background: linear-gradient(90deg, transparent, rgba(190, 225, 255, 0.5), transparent);
+}
+html.xw-theme-on #SpicyLyricsNPVCard .CardHeader {
+  border-bottom: 1px solid rgba(190, 225, 255, 0.1);
+  background: linear-gradient(180deg, rgba(190, 225, 255, 0.06), transparent);
+}
+html.xw-theme-on #SpicyLyricsNPVCard .CardTitle {
+  text-shadow: 0 0 18px rgba(150, 200, 255, 0.2);
+}
+html.xw-theme-on #SpicyLyricsNPVCard .CardControl {
+  background-color: rgba(190, 225, 255, 0.07) !important;
+  border: 1px solid rgba(190, 225, 255, 0.1);
+}
+html.xw-theme-on #SpicyLyricsNPVCard .CardControl:hover {
+  background-color: rgba(190, 225, 255, 0.17) !important;
+  box-shadow: 0 0 16px rgba(150, 200, 255, 0.22);
+}
+html.xw-theme-on [data-testid="lyrics-npv-section"] {
+  background:
+    radial-gradient(300px 160px at 88% -12%, rgba(120, 180, 255, 0.12), transparent 72%),
+    linear-gradient(160deg, rgba(18, 40, 64, 0.94) 0%, rgba(8, 20, 34, 0.96) 60%, rgba(4, 10, 18, 0.97) 100%) !important;
+  border: 1px solid rgba(190, 225, 255, 0.16) !important;
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(230, 245, 255, 0.05) !important;
+}
+
+/* Menus and separators */
+html.xw-theme-on [role="menu"] {
+  background-color: #0b1a2c !important;
+  border: 1px solid rgba(190, 225, 255, 0.13) !important;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65) !important;
+}
+html.xw-theme-on [role="menuitem"]:hover,
+html.xw-theme-on [role="menuitem"]:focus {
+  background-color: rgba(190, 225, 255, 0.12) !important;
+}
+html.xw-theme-on hr,
+html.xw-theme-on .main-trackList-trackListHeader {
+  border-color: rgba(190, 225, 255, 0.12) !important;
+}
+
+/* Winter banner */
+html.xw-theme-on #xw-banner {
+  background: #040b16;
+  border-color: rgba(190, 225, 255, 0.24);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 0 70px rgba(120, 180, 255, 0.07) inset;
+}
+html.xw-theme-on #xw-banner::before {
+  background: linear-gradient(
+    90deg,
+    rgba(4, 9, 17, 0.9) 0%,
+    rgba(4, 9, 17, 0.66) 34%,
+    rgba(4, 9, 17, 0.18) 62%,
+    transparent 82%
+  );
+}
+html.xw-theme-on #xw-banner::after {
+  box-shadow:
+    inset 0 0 90px rgba(0, 0, 0, 0.68),
+    inset 0 1px 0 rgba(230, 245, 255, 0.08);
+}
+html.xw-theme-on #xw-banner .hw-banner-title {
+  color: #f4fbff;
+  text-shadow:
+    0 0 22px rgba(150, 200, 255, 0.32),
+    0 2px 0 rgba(0, 0, 0, 0.35),
+    0 18px 40px rgba(0, 0, 0, 0.55);
+}
+html.xw-theme-on #xw-banner .hw-banner-kicker {
+  color: #cfe8ff;
+  text-shadow: 0 0 16px rgba(150, 200, 255, 0.3);
+}
+html.xw-theme-on #xw-banner .hw-banner-kicker::before {
+  background: linear-gradient(90deg, transparent, #cfe8ff);
+  box-shadow: 0 0 8px rgba(150, 200, 255, 0.55);
+}
+html.xw-theme-on #xw-banner .hw-banner-sub {
+  color: #c3d8ea;
+}
+html.xw-theme-on #xw-banner .hw-banner-sigil {
+  color: rgba(238, 246, 255, 0.55);
+}
+html.xw-theme-on #xw-banner .hw-banner-sigil span {
+  color: #cfe8ff;
+  text-shadow: 0 0 12px rgba(150, 200, 255, 0.75);
+}
+
+/* Page frost */
+html.xw-theme-on #xw-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+}
+html.xw-theme-on #xw-decor::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 120px;
+  background: linear-gradient(180deg, rgba(180, 220, 255, 0.08), transparent);
+}
+html.xw-theme-on .xw-frost {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  color: #eaf6ff;
+  opacity: 0.16;
+  pointer-events: none;
+}
+html.xw-theme-on .xw-frost svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+html.xw-theme-on .xw-frost.tr {
+  top: -24px;
+  right: -24px;
+}
+html.xw-theme-on .xw-frost.bl {
+  bottom: -30px;
+  left: -30px;
+  width: 160px;
+  height: 160px;
+  opacity: 0.1;
+}
+html.xw-theme-on body.hw-home .xw-frost.tr {
+  display: none;
+}
+html.xw-theme-on #xw-sidebar-decor {
+  position: absolute;
+  top: -14px;
+  right: -18px;
+  width: 132px;
+  height: 132px;
+  z-index: 3;
+  pointer-events: none;
+  color: #eaf6ff;
+  opacity: 0.13;
+}
+html.xw-theme-on #xw-sidebar-decor svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Tree toggle: a round top-bar button like Home and the bulb */
+#xw-tree-toggle {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: #b3b3b3;
+  cursor: pointer;
+  outline: none;
+  pointer-events: auto;
+  -webkit-app-region: no-drag !important;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+#xw-tree-toggle:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+#xw-tree-toggle:active {
+  transform: scale(0.96);
+}
+#xw-tree-toggle:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+.xw-tree-art {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+.xw-tree-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: transform 220ms ease;
+}
+#xw-tree-toggle:hover .xw-tree-art svg {
+  transform: scale(1.04);
+}
+.xw-tree-ornament {
+  fill: currentColor;
+  opacity: 0.38;
+  transition: fill 220ms ease, opacity 220ms ease;
+}
+.xw-tree-star {
+  fill: currentColor;
+  opacity: 0.5;
+  transition: fill 220ms ease, opacity 220ms ease;
+}
+#xw-tree-toggle.xw-tree-on {
+  color: #8fd3a0;
+}
+#xw-tree-toggle.xw-tree-on:hover {
+  color: #b7f0c4;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-ornament {
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.55));
+  animation: xwOrnTwinkle 2.2s ease-in-out infinite;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-ornament:nth-child(1) {
+  fill: #ff5b5b;
+  animation-delay: 0s;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-ornament:nth-child(2) {
+  fill: #ffd76a;
+  animation-delay: 0.3s;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-ornament:nth-child(3) {
+  fill: #7fd4ff;
+  animation-delay: 0.6s;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-ornament:nth-child(4) {
+  fill: #ff9f6a;
+  animation-delay: 0.9s;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-ornament:nth-child(5) {
+  fill: #b9a2ff;
+  animation-delay: 1.2s;
+}
+#xw-tree-toggle.xw-tree-on .xw-tree-star {
+  fill: #ffd76a;
+  opacity: 1;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 106, 0.95));
+  animation: xwStarGlow 2.4s ease-in-out infinite;
+}
+#xw-tree-toggle.xw-tree-firing .xw-tree-art svg {
+  animation: xwTreeJolt 620ms cubic-bezier(0.2, 0.8, 0.3, 1);
+  filter: drop-shadow(0 0 9px rgba(160, 210, 255, 0.9));
+}
+
+@keyframes xwOrnTwinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes xwStarGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes xwTreeJolt {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  28% {
+    transform: scale(1.16) rotate(-3deg);
+  }
+  58% {
+    transform: scale(0.97) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Banner animations: garland, lantern and chimney smoke */
+.xw-bulb-a {
+  animation: xwBulbBlink 1.2s steps(1) infinite;
+}
+
+.xw-bulb-b {
+  animation: xwBulbBlink 1.2s steps(1) infinite;
+  animation-delay: -0.6s;
+}
+
+@keyframes xwBulbBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.xw-lantern-flame {
+  animation: xwLanternPulse 2.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes xwLanternPulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.xw-smoke {
+  animation: xwSmokeDrift 8s ease-in-out infinite alternate;
+}
+
+@keyframes xwSmokeDrift {
+  from {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateX(7px);
+    opacity: 0.65;
+  }
+}
+
+.xw-sign {
+  animation: xwSignSway 4.2s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+}
+
+@keyframes xwSignSway {
+  from {
+    transform: rotate(-2.2deg);
+  }
+  to {
+    transform: rotate(2.2deg);
+  }
+}
+
+/* Falling snow */
+#xw-snow {
+  position: fixed;
+  inset: 0;
+  z-index: 99990;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+.xw-flake {
+  position: absolute;
+  top: -8vh;
+  left: var(--x);
+  color: #eaf6ff;
+  font-size: var(--s);
+  line-height: 1;
+  opacity: var(--o);
+  text-shadow: 0 0 7px rgba(190, 225, 255, 0.55);
+  will-change: transform;
+  animation: xwFall var(--d) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes xwFall {
+  from {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(360deg);
+  }
+}
+
+/* Click burst */
+#xw-fx {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+.xw-spark {
+  position: absolute;
+  color: #eaf6ff;
+  line-height: 1;
+  opacity: 0;
+  will-change: transform, opacity;
+  text-shadow: 0 0 10px rgba(180, 220, 255, 0.85);
+}
+.xw-click-ring {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 240, 255, 0.85);
+  box-shadow: 0 0 14px rgba(180, 220, 255, 0.6);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #xw-snow,
+  #xw-fx {
+    display: none !important;
+  }
+  #xw-tree-toggle.xw-tree-on .xw-tree-ornament,
+  #xw-tree-toggle.xw-tree-on .xw-tree-star {
+    animation: none !important;
+  }
+  #xw-tree-toggle .xw-tree-art svg {
+    animation: none !important;
+    transform: none !important;
+  }
+  .xw-bulb-a,
+  .xw-bulb-b {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .xw-lantern-flame,
+  .xw-smoke,
+  .xw-sign {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   Settings: gear button and language panel
+   ------------------------------------------------------------ */
+
+#xw-settings-toggle {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: #b3b3b3;
+  cursor: pointer;
+  outline: none;
+  pointer-events: auto;
+  -webkit-app-region: no-drag !important;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+#xw-settings-toggle:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+#xw-settings-toggle:active {
+  transform: scale(0.96);
+}
+#xw-settings-toggle:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+#xw-settings-toggle[aria-expanded="true"] {
+  color: #cfe8ff;
+}
+.xw-settings-art {
+  display: block;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+.xw-settings-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.xw-settings-panel {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 18px;
+  z-index: 2147483647;
+  width: 250px;
+  padding: 14px 14px 16px;
+  border-radius: 12px;
+  background: rgba(8, 16, 26, 0.97);
+  border: 1px solid rgba(180, 220, 255, 0.24);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.6);
+  color: #eaf6ff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.xw-settings-panel.xw-settings-open {
+  display: block;
+}
+.xw-settings-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.xw-settings-title {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.xw-settings-close {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #9db4c8;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.xw-settings-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+.xw-settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.xw-settings-label {
+  color: #a9c2d6;
+}
+.xw-lang-switch {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.xw-lang-switch button {
+  padding: 4px 9px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #b9cee0;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.xw-lang-switch button:hover {
+  color: #ffffff;
+}
+.xw-lang-switch button.xw-lang-active {
+  background: rgba(180, 220, 255, 0.18);
+  color: #ffffff;
+}
